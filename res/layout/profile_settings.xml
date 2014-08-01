@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:layout_width="fill_parent"
+	  android:layout_height="fill_parent"
+	  android:orientation="vertical">
+	  
+	<FrameLayout
+		  android:layout_width="fill_parent"
+		  android:layout_height="0dp"
+		  android:layout_weight="1">
+	<LinearLayout android:id="@+id/container"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	    
+	    <LinearLayout android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_marginTop="50dp">
+		    
+	        <Button
+		        android:id="@+id/button1"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Photo Profile"
+		        android:layout_gravity="center_horizontal" />
+	        
+	    </LinearLayout>
+	
+	    
+	    
+	    <LinearLayout android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_marginTop="20dp">
+	
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Location" />
+		    <EditText
+		        android:id="@+id/location"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10" 
+		        android:layout_marginLeft="20dp"/>
+	
+	 
+	         
+	    </LinearLayout>
+	    
+	    <LinearLayout android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_marginTop="20dp">
+				   <TextView
+			            android:id="@+id/textView1"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="Interests" />  
+			            
+		            <LinearLayout android:id="@+id/interests"
+		                android:layout_width="250dp"
+					    android:layout_height="wrap_content"
+					    android:orientation="vertical"
+					    android:layout_gravity="center_horizontal"
+					    android:layout_marginLeft="20dp">
+	
+		            </LinearLayout>
+	     </LinearLayout>
+	
+	    <Button
+	        android:id="@+id/save"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginTop="20dp"
+	        android:text="Save Changes" 
+	        android:onClick="save_preferences"/>
+	     
+	       
+	   </LinearLayout>
+	   
+	    <com.example.thevoiceofpeople.GIFView
+	        android:layout_gravity="center"
+	        
+	        android:layout_width="70px"
+	        android:layout_height="70px"
+	        android:id="@+id/GIFLoader">
+	     </com.example.thevoiceofpeople.GIFView>
+	     
+	    
+	</FrameLayout>
+
+	<LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/navigation_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageButton
+                android:id="@+id/homeBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@null"
+                android:onClick="worldActivity"
+                android:src="@drawable/earth" />
+
+            <ImageButton
+                android:id="@+id/profileBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="profileActivity"
+                android:src="@drawable/contact" />
+
+            <ImageButton
+                android:id="@+id/settingsBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="settingsActivity"
+                android:src="@drawable/gear" />
+        </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>
+

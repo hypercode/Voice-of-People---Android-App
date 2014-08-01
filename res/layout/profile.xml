@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#aaaaaaaa"
+        android:orientation="horizontal" 
+         android:id="@+id/y">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile_image" />
+
+        <LinearLayout
+            android:id="@+id/upperbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/numberOfPosts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#000034bc"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/textviewBTN"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="changeView1"
+            android:text="Textview" />
+
+        <Button
+            android:id="@+id/mapviewBTN"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="changeView2"
+            android:text="Mapview" />
+
+        <ImageButton
+            android:id="@+id/postviewBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:src="@drawable/post" 
+           android:onClick="changeView3"/>
+      
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/contentVF"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+		
+        
+         <ScrollView 
+            android:id="@+id/ScrollView01"
+         	android:layout_width="match_parent" 
+         	android:layout_height="wrap_content">
+		        <LinearLayout
+		            android:id="@+id/textview"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical" >
+		         
+		        </LinearLayout>
+        </ScrollView>
+        
+
+        <LinearLayout
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <fragment
+	          android:id="@+id/profile_map"
+	          android:layout_width="match_parent"
+	          android:layout_height="0dp"
+	          android:layout_weight="1"
+	          android:name="com.google.android.gms.maps.MapFragment"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/postView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+         	<TextView
+		       
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Title:" />
+		    <EditText
+		        android:hint="Give a title"
+		        android:id="@+id/post_title"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10" />
+		    <TextView
+			    android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Summary:" />
+		    <EditText
+		        android:hint="What's on your mind?"
+		      	android:id="@+id/post_summary"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="20"
+		        android:inputType="textMultiLine" />
+		    
+			<TextView
+			    android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Category:" />
+			 <Spinner
+			    android:id="@+id/category"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content" />
+			  <TextView
+			    android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Location" />
+			 
+			 <EditText
+		        android:hint="Where are you ?"
+		        android:id="@+id/post_location"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10" />
+			 
+			 
+			 <Button
+		     	android:id="@+id/postit"
+	        	android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:layout_gravity="center_horizontal"
+	        	android:layout_marginTop="20dp"
+	        	android:text="Post it" 
+	        	android:onClick="post"/> 
+            
+        </LinearLayout>
+    </ViewFlipper>
+
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/navigation_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageButton
+                android:id="@+id/homeBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@null"
+                android:onClick="worldActivity"
+                android:src="@drawable/earth" />
+
+            <ImageButton
+                android:id="@+id/profileBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="profileActivity"
+                android:src="@drawable/contact" />
+
+            <ImageButton
+                android:id="@+id/settingsBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="settingsActivity"
+                android:src="@drawable/gear" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

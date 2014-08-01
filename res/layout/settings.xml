@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/account_settingsBTN"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Account Settings" />
+
+        <Button
+            android:id="@+id/profile_settingsBTN"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:onClick="profile_settings"
+            android:text="Profile Settings" />
+
+        <Button
+            android:id="@+id/logoutBTN"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:onClick="logout"
+            android:text="Log Out" />
+    </LinearLayout>
+
+	<LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/navigation_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageButton
+                android:id="@+id/homeBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@null"
+                android:onClick="worldActivity"
+                android:src="@drawable/earth" />
+
+            <ImageButton
+                android:id="@+id/profileBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="profileActivity"
+                android:src="@drawable/contact" />
+
+            <ImageButton
+                android:id="@+id/settingsBTN"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="settingsActivity"
+                android:src="@drawable/gear" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
